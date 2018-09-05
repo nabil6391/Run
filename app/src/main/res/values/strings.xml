@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">RunLite</string>
+    <string name="activity_edit_title">Edit Run</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_done">Done</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_save">Save</string>
+    <string name="action_undo">UNDO</string>
+    <string name="activity_run_preferences_label">Preferences</string>
+    <string name="button_increase_countdown">+10 Seconds</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_edit">Edit</string>
+    <string name="button_pause">Pause</string>
+    <string name="button_resume">Resume</string>
+    <string name="button_start">Start</string>
+    <string name="button_stop">Stop</string>
+    <string name="channel_name">RunLite</string>
+    <string name="channel_description">Run Info</string>
+    <string name="dialog_number_picker_message">Minutes : Seconds</string>
+    <string name="dialog_number_picker_title">Edit Time Elapsed</string>
+    <string name="drawer_label_settings">Settings</string>
+    <string name="drawer_label_toggle_audio_cues">Audio Cues</string>
+    <string name="drawer_label_toggle_dark_mode">Dark Mode</string>
+    <string name="error_edit_text_distance_empty">Field cannot be empty</string>
+    <string name="error_edit_text_distance_no_numbers">Field must contain numbers</string>
+    <string name="error_edit_text_distance_zero">Distance must be greater than zero</string>
+    <string name="label_average_pace">Average Pace</string>
+    <string name="label_distance_travelled">Distance Travelled</string>
+    <string name="label_distance_run">Distance Ran</string>
+    <string name="label_distance_unit_km">km</string>
+    <string name="label_distance_unit_miles">mi</string>
+    <string name="label_gps_status">GPS</string>
+    <string name="label_runs">Runs</string>
+    <string name="label_time_elapsed">Time Elapsed</string>
+    <string name="label_time_active">Time Active</string>
+    <string name="nav_main_header_title">RunLite</string>
+    <string name="notification_channel_id">run_notification</string>
+    <string name="notification_default_content_title">Running</string>
+    <string name="notification_action_pause">Pause</string>
+    <string name="notification_action_resume">Resume</string>
+    <string name="notification_action_stop">Stop</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="toast_gps_mode">
+        High Accuracy GPS needs to be enabled in order to use this feature
+    </string>
+    <string name="toast_no_save_distance_low">Distance travelled too low. Run not saved</string>
+    <string name="toast_run_saved">Run saved</string>
+    <string name="toast_run_deleted">Run deleted</string>
+    <string name="toast_run_not_found">Error. Could not find run</string>
+    <string name="toast_run_updated">Changes saved</string>
+    <string name="tv_default_date_time">01/01/2017, 12:00</string>
+    <string name="tv_default_distance_travelled">0.00 km</string>
+    <string name="tv_default_number_of_runs">0</string>
+    <string name="tv_default_pace">-- : --</string>
+    <string name="tv_default_time_elapsed">00:00</string>
+    <string name="tv_bullet">\u2022</string>
+    <string name="tv_no_runs">
+        You haven\'t completed a run yet. Tap the button in the bottom right to start one.
+    </string>
+</resources>

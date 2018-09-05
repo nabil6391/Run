@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_general_label">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/distance_units_options"
+            android:entryValues="@array/distance_units_values"
+            android:key="@string/pref_distance_units_key"
+            android:summary="%s"
+            android:title="@string/pref_distance_units_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_audio_cues_label">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_audio_cue_enabled_key"
+            android:summary="@string/pref_audio_cue_enabled_summary"
+            android:title="@string/pref_audio_cue_enabled_title" />
+
+        <ListPreference
+            android:defaultValue="distance"
+            android:dependency="@string/pref_audio_cue_enabled_key"
+            android:entries="@array/audio_cue_type_options"
+            android:entryValues="@array/audio_cue_type_values"
+            android:key="@string/pref_audio_cue_type_key"
+            android:summary="%s"
+            android:title="@string/pref_audio_cue_type_title" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:dependency="@string/pref_audio_cue_enabled_key"
+            android:entries="@array/audio_cue_interval_distance_options"
+            android:entryValues="@array/audio_cue_interval_distance_values"
+            android:key="@string/pref_audio_cue_interval_distance_key"
+            android:summary="%s"
+            android:title="@string/pref_audio_cue_interval_distance_title" />
+
+        <ListPreference
+            android:defaultValue="300"
+            android:dependency="@string/pref_audio_cue_enabled_key"
+            android:entries="@array/audio_cue_interval_time_options"
+            android:entryValues="@array/audio_cue_interval_time_values"
+            android:key="@string/pref_audio_cue_interval_time_key"
+            android:summary="%s"
+            android:title="@string/pref_audio_cue_interval_time_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_interface_label">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_dark_mode_key"
+            android:summary="@string/pref_dark_mode_summary"
+            android:title="@string/pref_dark_mode_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

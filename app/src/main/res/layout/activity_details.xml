@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true">
+
+    <!-- MapView -->
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/clRunDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+    <RelativeLayout
+        android:id="@+id/rlMap"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:clickable="true" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/clMinMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/clRunDateTime"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivFullscreen"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="@dimen/header_margin"
+            android:background="@drawable/ic_fullscreen" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivMinimize"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="@dimen/header_margin"
+            android:background="@drawable/ic_fullscreen_exit"
+            android:visibility="gone" />
+    </android.support.design.widget.CoordinatorLayout>
+
+
+    <!-- AppBar -->
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!-- Run Details -->
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/clRunDateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        app:layout_constraintBottom_toTopOf="@id/clRunDetails">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvRunDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/seek_thumb_height"
+            app:cardBackgroundColor="?colorPrimaryDark"
+            app:cardCornerRadius="0dp">
+
+            <TextView
+                android:id="@+id/tvRunDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/tv_default_date_time"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_card_header"
+                android:textStyle="bold" />
+        </android.support.v7.widget.CardView>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/clRunDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="?colorBackgroundFloating"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fab_margin"
+                app:srcCompat="?ic_timer" />
+
+            <TextView
+                android:id="@+id/labelTimeElapsed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/fab_margin"
+                android:paddingTop="@dimen/fab_margin"
+                android:text="@string/label_time_elapsed"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@id/ivTime"
+                app:layout_constraintStart_toEndOf="@id/ivTime"
+                app:layout_constraintTop_toTopOf="@id/ivTime" />
+
+            <TextView
+                android:id="@+id/tvTimeElapsed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fab_margin"
+                android:text="@string/tv_default_time_elapsed"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/labelTimeElapsed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/labelTimeElapsed" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fab_margin"
+                app:layout_constraintTop_toBottomOf="@id/ivTime"
+                app:srcCompat="?ic_location_on" />
+
+            <TextView
+                android:id="@+id/labelDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_distance_travelled"
+                app:layout_constraintBottom_toBottomOf="@id/ivDistance"
+                app:layout_constraintStart_toEndOf="@id/ivDistance"
+                app:layout_constraintTop_toTopOf="@id/ivDistance" />
+
+            <TextView
+                android:id="@+id/tvDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fab_margin"
+                android:text="@string/tv_default_distance_travelled"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/labelDistance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/labelDistance" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivPace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fab_margin"
+                app:layout_constraintTop_toBottomOf="@id/ivDistance"
+                app:srcCompat="?ic_av_timer" />
+
+            <TextView
+                android:id="@+id/labelAveragePace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_average_pace"
+                app:layout_constraintBottom_toBottomOf="@id/ivPace"
+                app:layout_constraintStart_toEndOf="@id/ivPace"
+                app:layout_constraintTop_toTopOf="@id/ivPace" />
+
+            <TextView
+                android:id="@+id/tvAveragePaceString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fab_margin"
+                android:text="@string/tv_default_pace"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/labelAveragePace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/labelAveragePace" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+</android.support.constraint.ConstraintLayout>
